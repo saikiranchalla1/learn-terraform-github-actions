@@ -15,7 +15,7 @@ terraform {
     organization = "skillclick"
 
     workspaces {
-      name = "terraform-cloud-repo"
+      name = "gh-actions-demo"
     }
   }
 }

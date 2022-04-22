@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "3.26.0"
+      version = var.aws_provider_version
     }
     random = {
       source  = "hashicorp/random"
@@ -76,4 +76,9 @@ resource "aws_security_group" "web-sg" {
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
+}
+
+variable "aws_provider_version" {
+  type = string
+  default = "3.26.0"
 }
